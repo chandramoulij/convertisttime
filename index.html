@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert IST Time | VibeTime Global Portal</title>
+  <meta name="description" content="Precision world clock and time converter. Convert IST time and track global timezones with a modern, high-fidelity interface.">
+  <meta name="theme-color" content="#2563eb">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Convert IST Time | VibeTime">
+  <meta property="og:description" content="Effortless global time conversion and precision event tracking.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Default: White (Light) Theme with IST Subtle Accents */
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: #f1f5f9;
+      --text-base: #0f172a;
+      --text-muted: #64748b;
+      --border-main: #e2e8f0;
+      --accent: #2563eb;
+      --ist-orange: rgba(255, 153, 51, 0.08); /* Transparent Orange for 10% usage */
+    }
+
+    [data-theme='midnight'] {
+      --bg-base: #020617;
+      --bg-surface: #0f172a;
+      --bg-card: #1e293b;
+      --text-base: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-main: #334155;
+      --accent: #3b82f6;
+      --ist-orange: transparent;
+    }
+
+    [data-theme='blackout'] {
+      --bg-base: #000000;
+      --bg-surface: #0a0a0a;
+      --bg-card: #141414;
+      --text-base: #ffffff;
+      --text-muted: #737373;
+      --border-main: #262626;
+      --accent: #3b82f6;
+      --ist-orange: transparent;
+    }
+
+    [data-theme='cyber'] {
+      --bg-base: #09021a;
+      --bg-surface: #130533;
+      --bg-card: #1e0a4d;
+      --text-base: #fdfaff;
+      --text-muted: #9b72cf;
+      --border-main: #3d1b7d;
+      --accent: #d946ef;
+      --ist-orange: transparent;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-base);
+      overflow-x: hidden;
+      transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+
+    /* 10% Screen Decorative Orange Element */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -5%;
+      right: -5%;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, var(--ist-orange) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    .theme-transition {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .bg-theme-base { background-color: var(--bg-base); }
+    .bg-theme-surface { background-color: var(--bg-surface); }
+    .bg-theme-card { background-color: var(--bg-card); }
+    .text-theme-base { color: var(--text-base); }
+    .text-theme-muted { color: var(--text-muted); }
+    .border-theme-main { border-color: var(--border-main); }
+    
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .animate-fade { animation: fadeIn 0.5s ease-out; }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="animate-fade">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

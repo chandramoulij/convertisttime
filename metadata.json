@@ -1,0 +1,7 @@
+{
+  "name": "VibeTime: Global World Clock & Converter",
+  "description": "A high-end, modern world clock and time converter inspired by WorldTimeBuddy. Features interactive timeline scrubbing, analog clock visualizations, and natural language time queries.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
